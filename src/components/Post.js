@@ -31,11 +31,11 @@ export default class Post extends React.Component {
     render() {
         return (
             <div>
-                <h2> {this.props.title}</h2>
+                 {this.props.title}
                 <form onSubmit={this.handleSubmit}>
                     <input
                         value={this.state.newCommentText}
-                        onChtudo be ange={this.handleTextChange}
+                        onChange={this.handleTextChange}
                     />
                     <button type="submit"> Comentar</button>
                 </form>

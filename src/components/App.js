@@ -6,10 +6,13 @@ export default class App extends React.Component {
     render() {
         return (
             <div>
-            <h1><Drawer/></h1>
-            <Post title="Aprendendo ReactJS com a RocketSeat"/>
-            <Post title="ReactJS é dms"/>
-            <Post title="Em breve mais vídeos"/>
+            <Drawer/>
+            <h1> <i> <p>
+            Seja bem-vindo ao nosso site de Noticias!!<br/>
+            Monte sua noticia e publique aqui! curiosidades, acontecimentos, piadas, declarações, etc!<br/>
+            Seja Criativo!!!
+            </p> </i></h1>
+            <Post title="Deixe aqui seus comentarios, sugestões e reclamações para o site!!!"/>
             </div>
         );
     }
