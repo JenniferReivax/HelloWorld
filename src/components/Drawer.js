@@ -6,17 +6,18 @@ import List from '@material-ui/core/List';
 import Divider from '@material-ui/core/Divider';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
+import ListItemIcon from '@material-ui/core/ListItemIcon';
+import SvgIcons from './SvgIcons';
 
 
-
-const useStyles = makeStyles({
+const useStyles = makeStyles(theme => ({
   list: {
     width: 250,
   },
   fullList: {
     width: 'auto',
-  },
-});
+  }
+}));
 
 export default function TemporaryDrawer() {
   const classes = useStyles();
@@ -44,24 +45,32 @@ export default function TemporaryDrawer() {
     >
       <List>
         {[
-          { id: 1, nome: 'Menu' },
-          { id: 2, nome: 'Principais Noticias' },
-          { id: 3, nome: 'Noticias do Dia' },
-          { id: 4, nome: 'Favoritos' }
-        ].map((text, index) => (
-          <ListItem button key={text}>
-            <ListItemText primary={text} />
+          { id: 1, nome: 'Menu Inicial', icon: <SvgIcons />},
+          { id: 2, nome: 'Anotações Importantes' },
+          { id: 3, nome: 'Besteirol' },
+          { id: 4, nome: 'Imagens' }
+        ].map((item, index) => (
+          <ListItem button key={index}>
+          {item.icon &&
+          <ListItemIcon>{item.icon}</ListItemIcon>
+          }
+            <ListItemText primary={item.nome} />
           </ListItem>
         ))}
       </List>
       <Divider />
     </div>
-  );
-
+  )
 
   return (
     <div>
-      <Button onClick={toggleDrawer('left', true)}>Menu</Button>
+      <Button 
+      onClick={toggleDrawer('left', true)}
+      startIcon={<SvgIcons/>}
+      color="secondary"
+      >
+       <h3> Menu </h3>
+      </Button>
       <Drawer open={state.left} onClose={toggleDrawer('left', false)}>
         {sideList('left')}
       </Drawer>

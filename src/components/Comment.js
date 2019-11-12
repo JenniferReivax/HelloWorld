@@ -1,10 +1,12 @@
 import React from 'react';
 
-export default class Comment extends React.Component{
+export default class Comment extends React.Component {
 
-    render (){
+    render() {
         return (
-           <p> {this.props.text}</p>
+            <div>
+                <p>{this.props.text}</p> 
+            </div>
         )
     }
 }
